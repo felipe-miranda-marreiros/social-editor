@@ -23,12 +23,28 @@ button {
   }
 }
 
+@keyframes fade-in-from-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
 .app {
   font-family: "Lato", sans-serif;
   font-size: 15px;
   color: #fff;
   height: 100vh;
   width: 100vw;
+}
+
+.app__container {
+  height: calc(100vh - 55px);
+  display: flex;
 }
 
 .header {
@@ -83,4 +99,85 @@ button {
 }
 
 .dd-toggle__text {
+}
+
+.sidebar {
+  background-color: #10171a;
+  width: 75px;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel {
+  background-color: #2b363c;
+  width: 350px;
+}
+
+.main {
+  background-color: #edf1f3;
+  flex: 1;
+}
+
+.menu {
+}
+
+.menu__button {
+  padding: 19px 0;
+  color: rgba(255, 255, 255, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  transition: all ease-out 300ms;
+  animation: fade-in-from-left 300ms;
+}
+
+.menu__button:hover {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button:focus {
+  background-color: #2b363b;
+  color: #fff;
+  cursor: pointer;
+}
+
+.menu__button--active {
+  background-color: #2b363c;
+  color: #fff;
+  position: relative;
+}
+
+.menu__button--active::before {
+  content: "";
+  width: 3px;
+  height: 100%;
+  background-color: #375bb6;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.menu__icon {
+  font-size: 18px;
+  margin-bottom: 3px;
+}
+
+.menu__text {
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.footer {
+  margin-top: auto;
+  margin-bottom: 60px;
+  transform: rotate(-90deg);
+  white-space: nowrap;
+}
+
+.copyright {
+  color: rgba(255, 255, 255, 0.15);
+  font-size: 12px;
 }
